@@ -7,8 +7,10 @@ from flask import Flask, jsonify
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy import create_engine, String, select
 from sqlalchemy.orm import Session, DeclarativeBase, Mapped, mapped_column
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 DB_HOST = os.getenv('DB_HOST')
 DB_USER = os.getenv('DB_USER')
